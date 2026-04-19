@@ -1,8 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { LineHoverLink } from "./LineHoverLink";
 import { SocialFlipButton } from "./SocialFlipButton";
-import { Camera, Globe, Link, MapPin, Phone, Mail } from "lucide-react";
+import { Camera, Globe, Link as LinkIcon, MapPin, Phone, Mail } from "lucide-react";
 
 export function GlobalFooter() {
   return (
@@ -14,16 +15,16 @@ export function GlobalFooter() {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
         {/* Brand */}
         <div className="flex flex-col gap-6">
-          <h2 className="font-display font-black text-3xl tracking-tighter text-white">
+          <Link href="/" className="font-display font-black text-3xl tracking-tighter text-white hover:text-[var(--accent)] transition-colors">
             AJ PRO
-          </h2>
+          </Link>
           <p className="text-[var(--text-secondary)] font-medium">
             Premium mobile auto detailing, paint correction, and ceramic coating in West Palm Beach, Florida.
           </p>
           <div className="flex gap-4">
             <SocialFlipButton href="https://instagram.com/ajpromobiledetailing" icon={<Camera size={20} />} />
             <SocialFlipButton href="#" icon={<Globe size={20} />} />
-            <SocialFlipButton href="#" icon={<Link size={20} />} />
+            <SocialFlipButton href="#" icon={<LinkIcon size={20} />} />
           </div>
         </div>
 
@@ -50,17 +51,17 @@ export function GlobalFooter() {
         {/* Contact */}
         <div className="flex flex-col gap-4">
           <h3 className="font-bold text-lg text-white mb-2">Get in Touch</h3>
-          <div className="flex items-center gap-3 text-[var(--text-secondary)]">
-            <Phone size={18} className="text-[var(--accent)]" />
+          <a href="tel:+15615550198" className="flex items-center gap-3 text-[var(--text-secondary)] hover:text-white transition-colors">
+            <Phone size={18} className="text-[var(--accent)] shrink-0" />
             <span>(561) 555-0198</span>
-          </div>
-          <div className="flex items-center gap-3 text-[var(--text-secondary)]">
-            <Mail size={18} className="text-[var(--accent)]" />
+          </a>
+          <a href="mailto:hello@ajprodetailing.com" className="flex items-center gap-3 text-[var(--text-secondary)] hover:text-white transition-colors">
+            <Mail size={18} className="text-[var(--accent)] shrink-0" />
             <span>hello@ajprodetailing.com</span>
-          </div>
+          </a>
           <div className="flex items-center gap-3 text-[var(--text-secondary)]">
             <MapPin size={18} className="text-[var(--accent)] shrink-0" />
-            <span>West Palm Beach, FL & Surrounding Areas</span>
+            <span>West Palm Beach, FL &amp; Surrounding Areas</span>
           </div>
         </div>
       </div>

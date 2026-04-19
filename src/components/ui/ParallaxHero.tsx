@@ -64,7 +64,7 @@ export function ParallaxHero() {
   return (
     <section 
       ref={containerRef}
-      className="relative h-screen w-full overflow-hidden bg-black flexItems flex items-center justify-center pt-24 opacity-0"
+      className="relative h-screen w-full overflow-hidden bg-black flex items-center justify-center pt-24 opacity-0"
     >
       {/* Background Layer */}
       <div 

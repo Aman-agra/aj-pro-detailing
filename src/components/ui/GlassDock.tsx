@@ -3,9 +3,12 @@
 import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-export function GlassDock({ currentPath }: { currentPath?: string }) {
+export function GlassDock() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const links = [
     { label: "Home", href: "/" },
@@ -32,16 +35,16 @@ export function GlassDock({ currentPath }: { currentPath?: string }) {
           AJ PRO
         </div>
         {links.map((link) => (
-          <a
+          <Link
             key={link.label}
             href={link.href}
             className={twMerge(
               "px-4 py-2 rounded-full text-sm font-medium transition-all hover:bg-white/10 hover:text-white",
-              currentPath === link.href ? "bg-white/15 text-white" : "text-white/70"
+              pathname === link.href ? "bg-white/15 text-white" : "text-white/70"
             )}
           >
             {link.label}
-          </a>
+          </Link>
         ))}
       </motion.div>
 
@@ -53,6 +56,7 @@ export function GlassDock({ currentPath }: { currentPath?: string }) {
       >
         <button 
           onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
           className="p-4 rounded-full border border-white/10 bg-black/40 backdrop-blur-3xl shadow-2xl flex flex-col gap-1.5"
         >
           <div className="w-6 h-0.5 bg-white transition-all" style={{ transform: isOpen ? 'rotate(45deg) translate(5px, 5px)' : '' }} />
@@ -69,16 +73,20 @@ export function GlassDock({ currentPath }: { currentPath?: string }) {
           className="fixed inset-0 z-40 bg-black/80 backdrop-blur-xl md:hidden flex flex-col items-center justify-center gap-6"
         >
           {links.map((link, i) => (
-            <motion.a
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.05 }}
               key={link.label}
-              href={link.href}
-              className="text-2xl font-display font-semibold text-white/90 hover:text-[var(--accent)]"
             >
-              {link.label}
-            </motion.a>
+              <Link
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="text-2xl font-display font-semibold text-white/90 hover:text-[var(--accent)]"
+              >
+                {link.label}
+              </Link>
+            </motion.div>
           ))}
         </motion.div>
       )}

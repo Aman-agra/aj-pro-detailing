@@ -1,27 +1,34 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useUISounds } from "@/components/ui/useUISounds";
 
 export function CustomCursor() {
   const [isHovering, setIsHovering] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
+  const [isMobile, setIsMobile] = useState(true); // default true to prevent SSR flash
+  const isHoveringRef = useRef(false);
   
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  // The small dot should be instantaneous or very tight
   const dotX = useSpring(mouseX, { damping: 40, stiffness: 800, mass: 0.1 });
   const dotY = useSpring(mouseY, { damping: 40, stiffness: 800, mass: 0.1 });
 
-  // The aura should trail smoothly like liquid
   const auraX = useSpring(mouseX, { damping: 25, stiffness: 150, mass: 0.6 });
   const auraY = useSpring(mouseY, { damping: 25, stiffness: 150, mass: 0.6 });
 
   const { playHover, playClick } = useUISounds();
 
   useEffect(() => {
+    // Only show cursor on non-touch (pointer) devices
+    setIsMobile(window.matchMedia("(pointer: coarse)").matches);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) return;
+
     const moveCursor = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
@@ -29,12 +36,13 @@ export function CustomCursor() {
     
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (target.closest('a') || target.closest('button') || target.closest('.cursor-interact')) {
-        setIsHovering(true);
-        if (!isHovering) playHover();
-      } else {
-        setIsHovering(false);
+      const hovering = !!(target.closest('a') || target.closest('button') || target.closest('.cursor-interact'));
+      // Only fire the sound on the leading edge (entering, not while staying)
+      if (hovering && !isHoveringRef.current) {
+        playHover();
       }
+      isHoveringRef.current = hovering;
+      setIsHovering(hovering);
     };
 
     const handleMouseDown = () => {
@@ -57,7 +65,9 @@ export function CustomCursor() {
       window.removeEventListener("mousedown", handleMouseDown);
       window.removeEventListener("mouseup", handleMouseUp);
     };
-  }, [mouseX, mouseY, isHovering, playHover, playClick]);
+  }, [isMobile, mouseX, mouseY, playHover, playClick]);
+
+  if (isMobile) return null;
 
   return (
     <>
@@ -80,7 +90,7 @@ export function CustomCursor() {
         transition={{ duration: 0.3, ease: "easeOut" }}
       />
 
-      {/* Center Precision Dot (with mix-blend-mode difference for sharp contrast over text) */}
+      {/* Precision Dot */}
       <motion.div
         className="fixed top-0 left-0 w-2 h-2 bg-white rounded-full pointer-events-none z-[9999] mix-blend-difference"
         style={{
