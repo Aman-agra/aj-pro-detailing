@@ -5,7 +5,7 @@ import { twMerge } from "tailwind-merge";
 import Image from "next/image";
 
 export function StaggeredGrid({ items, className }: { 
-  items: { id: string; url: string; alt: string; span?: "col-span-1" | "col-span-2" | "row-span-2" }[],
+  items: { id: string; url: string; alt: string; span?: "col-span-1" | "col-span-2" | "row-span-2" | string }[],
   className?: string 
 }) {
   return (
