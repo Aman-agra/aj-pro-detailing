@@ -117,7 +117,7 @@ export function ParallaxHero() {
       {/* Content */}
       <div ref={textRef} className="relative z-20 max-w-4xl mx-auto text-center px-6 mt-[-10vh]">
         <div className="inline-block px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8">
-          <span className="text-sm font-medium tracking-wide text-white/80">WEST PALM BEACH'S PREMIER MOBILE DETAILER</span>
+          <span className="text-sm font-medium tracking-wide text-white/80 uppercase">Official Detailers for Christ Fellowship</span>
         </div>
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-black tracking-tighter mb-8 leading-[0.9] drop-shadow-2xl">
           PERFECTION, <br />

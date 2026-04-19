@@ -5,15 +5,15 @@ import Link from "next/link";
 
 export default function Areas() {
   const locations = [
-    { city: "West Palm Beach", distance: "Headquarters", status: "Available" },
-    { city: "Palm Beach", distance: "2 miles", status: "Available" },
-    { city: "Palm Beach Gardens", distance: "12 miles", status: "Available" },
-    { city: "Jupiter", distance: "18 miles", status: "Available" },
-    { city: "Wellington", distance: "15 miles", status: "Available" },
-    { city: "Boynton Beach", distance: "14 miles", status: "Available" },
-    { city: "Delray Beach", distance: "20 miles", status: "Available" },
-    { city: "Boca Raton", distance: "28 miles", status: "Limited" },
-    { city: "Deerfield Beach", distance: "32 miles", status: "Limited" },
+    { city: "West Palm Beach", distance: "Main Hub", status: "Available" },
+    { city: "Jupiter", distance: "North County", status: "Available" },
+    { city: "Boca Raton", distance: "South County", status: "Available" },
+    { city: "Wellington", distance: "West County", status: "Available" },
+    { city: "Lake Park", distance: "East County", status: "Available" },
+    { city: "North Palm Beach", status: "Available" },
+    { city: "Palm Beach Gardens", distance: "North County", status: "Available" },
+    { city: "Lake Worth", status: "Available" },
+    { city: "Royal Palm Beach", status: "Available" },
   ];
 
   return (

@@ -19,18 +19,18 @@ export default function About() {
           </h1>
           <div className="space-y-6 text-[var(--text-secondary)] text-lg leading-relaxed">
             <p>
-              AJ Pro Mobile Detailing started with a simple belief: the luxury detailing experience shouldn't be confined to a shop. We brings the showroom to your driveway, combining state-of-the-art products with unparalleled convenience.
+              AJ Pro Mobile Detailing was founded on the principle that luxury vehicle care should come to you. As the <strong>Official Detailers for Christ Fellowship</strong>, we have built a reputation for trust, excellence, and uncompromising service in the West Palm Beach community.
             </p>
             <p>
-              Based in West Palm Beach, we cater to enthusiasts and professionals who demand nothing but the absolute best for their vehicles. From high-end exotics to luxury family SUVs, our team treats every vehicle with the same meticulous attention to detail.
+              Based in Palm Beach County, we cater to luxury vehicle owners who demand the absolute best. Our team is fully bilingual (English & Español), ensuring clear communication and a personalized experience for every client.
             </p>
             <p>
-              We don't just clean cars; we restore, protect, and enhance your investment.
+              From custom exotics to luxury family fleets, we bring the showroom experience directly to your driveway or office. We don't just clean cars; we restore and protect your investment.
             </p>
           </div>
           
           <div className="mt-10">
-            <LiquidMetalButton>Let's Detail Your Fleet</LiquidMetalButton>
+            <LiquidMetalButton>Meet the Team</LiquidMetalButton>
           </div>
         </div>
 
@@ -38,15 +38,15 @@ export default function About() {
           {/* Add a nice abstract or shop image here */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10" />
           <Image 
-            src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80&w=800" 
-            alt="AJ Pro Detailing Service"
+            src="https://images.unsplash.com/photo-1599256621730-535171e28e50?auto=format&fit=crop&q=80&w=800" 
+            alt="AJ Pro Detailing Founder"
             fill
             className="object-cover"
             unoptimized
           />
           <div className="absolute bottom-10 left-10 z-20">
             <p className="font-display font-bold text-3xl mb-2">AJ</p>
-            <p className="text-[var(--accent)] tracking-widest text-sm font-semibold">FOUNDER & MASTER DETAILER</p>
+            <p className="text-[var(--accent)] tracking-widest text-sm font-semibold uppercase">Founder & Official Christ Fellowship Detailer</p>
           </div>
         </div>
       </section>
@@ -55,15 +55,15 @@ export default function About() {
       <section className="py-24 px-6 bg-[var(--bg-darker)]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-black mb-4">OUR CORE VALUES</h2>
+            <h2 className="text-4xl md:text-5xl font-display font-black mb-4">DRIVEN BY VALUES</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: <Zap size={32}/>, title: "Speed & Precision", desc: "We value your time as much as your vehicle." },
-              { icon: <ShieldCheck size={32}/>, title: "Uncompromising Quality", desc: "We use only the finest products and proven techniques." },
-              { icon: <HeartHandshake size={32}/>, title: "Integrity", desc: "Honest communication and transparent pricing always." },
-              { icon: <Lightbulb size={32}/>, title: "Innovation", desc: "Constantly testing new ceramic technologies and methods." },
+              { icon: <Zap size={32}/>, title: "Precision", desc: "Every crevice, every stitch, handled with extreme care." },
+              { icon: <ShieldCheck size={32}/>, title: "Official Trust", desc: "Trusted by organizations like Christ Fellowship and local luxury owners." },
+              { icon: <HeartHandshake size={32}/>, title: "Bilingual Service", desc: "Clear communication in both English and Español." },
+              { icon: <Lightbulb size={32}/>, title: "Premium Tech", desc: "Using the latest graphene and ceramic technologies." },
             ].map((v, i) => (
               <GlowBorderCard key={i} delay={i * 0.1}>
                 <div className="text-[var(--accent)] mb-6">{v.icon}</div>

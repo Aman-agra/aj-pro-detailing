@@ -10,62 +10,64 @@ export default function Services() {
   const servicesList = [
     {
       id: "exterior",
-      title: "Exterior Detail",
+      title: "Mini Exterior Detail",
       icon: <Sparkles className="text-[var(--accent)]" size={40} />,
-      price: "From $150",
-      time: "2-3 Hours",
+      price: "From $90",
+      time: "1-2 Hours",
       features: [
         "Foam hand wash & dry",
         "Bug and tar removal",
         "Clean tires, wheels & wheel wells",
         "Dress tires & trim",
         "Clean exterior windows",
-        "Spray sealant application (3-month protection)"
+        "High-grade spray sealant",
+        "Official Christ Fellowship detailer"
       ]
     },
     {
       id: "interior",
-      title: "Interior Detail",
+      title: "Standard Interior Detail",
       icon: <Car className="text-[var(--accent)]" size={40} />,
-      price: "From $150",
-      time: "2-4 Hours",
+      price: "From $70",
+      time: "2-3 Hours",
       features: [
         "Thorough vacuuming",
         "Wipe down all hard surfaces",
         "UV protection on plastics/vinyl",
         "Clean interior windows & mirrors",
-        "Light stain removal",
-        "Leather cleaning & conditioning"
+        "Pet hair & sand removal specialized",
+        "Leather cleaning & conditioning",
+        "Servicio en Español disponible"
       ]
     },
     {
       id: "paint",
-      title: "Paint Correction",
+      title: "Premium Paint Correction",
       icon: <Shield className="text-[var(--accent)]" size={40} />,
-      price: "From $400",
+      price: "From $500",
       time: "1-2 Days",
       features: [
-        "Full exterior wash & decontamination",
+        "Full exterior decontamination",
         "Clay bar treatment",
+        "Removing swirl marks & scratches",
         "1 or 2-step machine polishing",
-        "Removal of 60-90% of swirl marks & defects",
-        "Enhances gloss and clarity",
-        "Prep for ceramic coating or sealant"
+        "Diamond-like gloss restoration",
+        "Headlight restoration included"
       ]
     },
     {
       id: "ceramic",
-      title: "Ceramic Coating",
+      title: "Lifetime Ceramic Coating",
       icon: <Droplets className="text-[var(--accent)]" size={40} />,
-      price: "From $800",
-      time: "2-3 Days",
+      price: "From $500",
+      time: "1-3 Days",
       features: [
-        "Includes full paint correction",
-        "3 to 5-year ceramic coating applied to paint",
-        "Coating applied to wheel faces",
-        "Coating applied to exterior glass",
-        "Extreme hydrophobic properties",
-        "Self-cleaning effect and deep gloss"
+        "Includes paint correction",
+        "Long-term surface protection",
+        "Extreme water beading",
+        "Protects against UV & oxidation",
+        "Applied to glass & wheel faces",
+        "Engine bay cleaning included"
       ]
     }
   ];
