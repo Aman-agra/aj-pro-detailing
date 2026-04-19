@@ -16,7 +16,7 @@ export async function sendContactForm(formData: FormData) {
   try {
     const { data, error } = await resend.emails.send({
       from: 'AJ Pro Leads <onboarding@resend.dev>', // Default for testing, change to verified domain in prod
-      to: ['hello@ajpromobiledetailing.com'], 
+      to: ['humancoverai@gmail.com'], 
       subject: `New Deep Clean Quote: ${firstName} ${lastName} - ${vehicle}`,
       replyTo: email,
       html: `
