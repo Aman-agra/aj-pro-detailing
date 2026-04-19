@@ -13,12 +13,12 @@ export default function Showroom() {
 
   // Mock data for the showroom - in real life this could mix with Instagram data
   const portfolioItems = [
-    { id: "1", category: "Ceramic Coating", url: "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80&w=800", alt: "Porsche 911 Ceramic Coating", span: "row-span-2 col-span-1" as const },
-    { id: "2", category: "Interior Detail", url: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=600", alt: "BMW M4 Interior" },
-    { id: "3", category: "Paint Correction", url: "https://images.unsplash.com/photo-1605810754890-e25f8aaade28?auto=format&fit=crop&q=80&w=600", alt: "Audi RS6 Paint Correction" },
-    { id: "4", category: "Exterior Detail", url: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=600", alt: "Mercedes AMG wash" },
-    { id: "5", category: "Ceramic Coating", url: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=80&w=800", alt: "Ferrari 488 Coating", span: "col-span-2" as const },
-    { id: "6", category: "Interior Detail", url: "https://images.unsplash.com/photo-1600705722908-bab1e61c0b4d?auto=format&fit=crop&q=80&w=600", alt: "Tesla Model S Interior" },
+    { id: "1", category: "Ceramic Coating", url: "https://images.unsplash.com/photo-1616789916664-79f0f35e5929?w=800&auto=format&fit=crop&q=80", alt: "Porsche 911 Ceramic Coating", span: "row-span-2 col-span-1" as const },
+    { id: "2", category: "Interior Detail", url: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&auto=format&fit=crop&q=80", alt: "BMW M4 Interior" },
+    { id: "3", category: "Paint Correction", url: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&auto=format&fit=crop&q=80", alt: "Audi RS6 Paint Correction" },
+    { id: "4", category: "Exterior Detail", url: "https://images.unsplash.com/photo-1520031441872-265e4ff70366?w=600&auto=format&fit=crop&q=80", alt: "Mercedes AMG Exterior Wash" },
+    { id: "5", category: "Ceramic Coating", url: "https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=800&auto=format&fit=crop&q=80", alt: "Ferrari 488 Ceramic Coating", span: "col-span-2" as const },
+    { id: "6", category: "Interior Detail", url: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=600&auto=format&fit=crop&q=80", alt: "Tesla Model S Interior" },
   ];
 
   const filteredItems = filter === "All" 
@@ -66,15 +66,19 @@ export default function Showroom() {
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-display font-black text-center mb-16">CLIENT EXPERIENCES</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1,2,3].map((i) => (
+            {[
+              { name: "Michael T.", location: "West Palm Beach", review: "AJ and his team performed an absolute miracle on my black 911. The paint correction removed years of terrible washing and the ceramic coating makes it look wet all the time. Couldn't be happier." },
+              { name: "Sarah K.", location: "Boca Raton", review: "Booked the full interior detail for my Range Rover after my kids destroyed it. I genuinely couldn't believe it was the same car. Super professional, came to my house, done in 4 hours." },
+              { name: "Carlos M.", location: "Lake Worth", review: "Had my Tesla Model Y done with the ceramic package. The hydrophobic coating is insane — water just rolls right off. Worth every penny for the long-term protection alone." },
+            ].map((t, i) => (
               <GlowBorderCard key={i} className="p-8">
                 <div className="flex text-[var(--accent)] mb-4">
                   {"★★★★★"}
                 </div>
                 <p className="text-[var(--text-secondary)] italic mb-6">
-                  "AJ and his team performed an absolute miracle on my black 911. The paint correction removed years of terrible washing from the previous owner, and the ceramic coating makes it look wet all the time. Couldn't be happier."
+                  "{t.review}"
                 </p>
-                <p className="font-bold">- Michael T. (West Palm Beach)</p>
+                <p className="font-bold">- {t.name} <span className="font-normal text-[var(--text-muted)]">({t.location})</span></p>
               </GlowBorderCard>
             ))}
           </div>
