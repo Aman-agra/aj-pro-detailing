@@ -19,10 +19,10 @@ export default function Home() {
   ];
 
   const galleryItems = [
-    { id: "1", url: "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80&w=800", alt: "Ceramic Coating", span: "row-span-2 col-span-2" as const },
-    { id: "2", url: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=600", alt: "Interior Detail" },
-    { id: "3", url: "https://images.unsplash.com/photo-1605810754890-e25f8aaade28?auto=format&fit=crop&q=80&w=600", alt: "Paint Correction" },
-    { id: "4", url: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=600", alt: "Detailing Process" },
+    { id: "1", url: "https://ajpromobiledetailing.com/wp-content/uploads/2025/08/AJ-PRO-Mobile-Detailing-1.webp", alt: "Detailing Process", span: "row-span-2 col-span-2" as const },
+    { id: "2", url: "https://ajpromobiledetailing.com/wp-content/uploads/2025/08/grey-ferrari.webp", alt: "Premium Detail" },
+    { id: "3", url: "https://ajpromobiledetailing.com/wp-content/uploads/2025/08/AJ-PRO-Mobile-Detailing-1.webp", alt: "Paint Correction" },
+    { id: "4", url: "https://ajpromobiledetailing.com/wp-content/uploads/2025/08/grey-ferrari.webp", alt: "Ceramic Coating" },
   ];
 
   return (

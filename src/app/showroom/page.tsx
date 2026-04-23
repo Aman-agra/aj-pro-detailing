@@ -11,14 +11,13 @@ export default function Showroom() {
 
   const categories = ["All", "Exterior Detail", "Interior Detail", "Paint Correction", "Ceramic Coating"];
 
-  // Mock data for the showroom - in real life this could mix with Instagram data
   const portfolioItems = [
-    { id: "1", category: "Ceramic Coating", url: "https://images.unsplash.com/photo-1616789916664-79f0f35e5929?w=800&auto=format&fit=crop&q=80", alt: "Porsche 911 Ceramic Coating", span: "row-span-2 col-span-1" as const },
-    { id: "2", category: "Interior Detail", url: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&auto=format&fit=crop&q=80", alt: "BMW M4 Interior" },
-    { id: "3", category: "Paint Correction", url: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&auto=format&fit=crop&q=80", alt: "Audi RS6 Paint Correction" },
-    { id: "4", category: "Exterior Detail", url: "https://images.unsplash.com/photo-1520031441872-265e4ff70366?w=600&auto=format&fit=crop&q=80", alt: "Mercedes AMG Exterior Wash" },
-    { id: "5", category: "Ceramic Coating", url: "https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=800&auto=format&fit=crop&q=80", alt: "Ferrari 488 Ceramic Coating", span: "col-span-2" as const },
-    { id: "6", category: "Interior Detail", url: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=600&auto=format&fit=crop&q=80", alt: "Tesla Model S Interior" },
+    { id: "1", category: "Ceramic Coating", url: "https://ajpromobiledetailing.com/wp-content/uploads/2025/08/grey-ferrari.webp", alt: "Ferrari Ceramic Coating", span: "row-span-2 col-span-1" as const },
+    { id: "2", category: "Interior Detail", url: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&auto=format&fit=crop&q=80", alt: "Premium Interior Detail" },
+    { id: "3", category: "Paint Correction", url: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&auto=format&fit=crop&q=80", alt: "Audi Paint Correction" },
+    { id: "4", category: "Exterior Detail", url: "https://ajpromobiledetailing.com/wp-content/uploads/2025/08/AJ-PRO-Mobile-Detailing-1.webp", alt: "Exterior Wash & Detail" },
+    { id: "5", category: "Ceramic Coating", url: "https://ajpromobiledetailing.com/wp-content/uploads/2025/08/grey-ferrari.webp", alt: "Ferrari Paint Correction", span: "col-span-2" as const },
+    { id: "6", category: "Interior Detail", url: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=600&auto=format&fit=crop&q=80", alt: "Luxury Interior Care" },
   ];
 
   const filteredItems = filter === "All" 

@@ -38,7 +38,7 @@ export default function About() {
           {/* Add a nice abstract or shop image here */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10" />
           <Image 
-            src="https://images.unsplash.com/photo-1599256621730-535171e28e50?auto=format&fit=crop&q=80&w=800" 
+            src="https://ajpromobiledetailing.com/wp-content/uploads/2025/08/AJ-PRO-Mobile-Detailing-1.webp" 
             alt="AJ Pro Detailing Founder"
             fill
             className="object-cover"
